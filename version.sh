@@ -12,7 +12,7 @@ if ! test "$revision"; then
 fi
 
 # Shallow Git clones (--depth) do not have the N tag:
-# use 'git-YYYY-MM-DD-hhhhhhh'.
+# use 'git-YYYY-MM-DD-hhhhhhh'...     
 test "$revision" || revision=$(cd "$1" &&
   git log -1 --pretty=format:"git-%cd-%h" --date=short 2> /dev/null)
 
